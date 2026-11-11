@@ -38,7 +38,11 @@ def chunk_file(
         raw_txt = f.read()
 
     words = raw_txt.split()
-
+    id = 0
+    chunks = {}
+    for i in range(0,len(words),chunk_size):
+        chunks[id] = words[i:i+chunk_size]
+        id += 1
     # TODO 1:
     # Break `words` into non-overlapping groups of `chunk_size`.
     #
